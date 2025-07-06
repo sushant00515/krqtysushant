@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Coins: Buy and recharge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+    <div class="header-left">
+      <div class="logo">
+        <img src="TikTok_logo.svg.png" alt="TikTok">
+      </div>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search">
+    </div>
+    <div class="icons" style="display: flex; align-items: center; gap: 14px;">
+        <img src="upload.png" alt="Upload" style="width: 85px; height: 85px; object-fit: contain;">
+  <img src="send.png" alt="Send" style="width: 20px; height: 20px;">
+  <img src="inbox.png" alt="Inbox" style="width: 24px; height: 24px;">
+  <div class="avatar-img">
+    <img src="Mahindra ThaR wallpaper.jpg" alt="Profile" style="width: 32px; height: 32px; border-radius: 50%;">
+  </div>
+</div>
+
+
+    </div>
+  </header>
+  <div class="top-history-link-container">
+    <a href="#" class="top-history-link">View transaction history</a>
+  </div>
+  <div class="container">
+    <div class="title">Get Coins</div>
+    <div class="user-info">
+      <div class="avatar">
+        <img src="Mahindra ThaR wallpaper.jpg" alt="Avatar">
+      </div>
+      
+      <div>
+        <div style="font-weight: 500; font-size: 16px;">Steveee_</div>
+        <!-- before -->
+<div style="font-size: 13px; color: #888;">🪙 837283938,34</div>
+
+<!-- after -->
+<div style="font-size: 13px; color: #888;">
+  
+      
+  
+</div>
+
+      </div>
+    </div>
+    <div class="recharge-line" style="margin-bottom: 4px;">
+  <span class="recharge-label">Recharge:</span>
+  <span class="recharge-detail"> Save up to 31% compared to in-app purchase</span>
+</div>
+<div class="username-input-container" style="margin: 14px 0; position: relative;">
+  <label for="usernameInput" style="display: block; font-weight: 600; margin-bottom: 6px;"></label>
+  <input type="text" id="usernameInput" placeholder="Enter Username" style="width: 24%; padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  ">
+  
+  <!-- Suggestion box -->
+  <ul id="usernameSuggestions" style="
+    list-style: none; 
+    padding: 0; 
+    margin: 4px 0 0; 
+    display: none; 
+    width: 24%; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    background: #fff; 
+    position: absolute; 
+    z-index: 1000;">
+  </ul>
+</div>
+
+
+    <div class="coin-grid">
+      <div class="coin-box ">
+        <div class="coin-icon">🪙 70</div>
+        <div>$0.74</div>
+      </div>
+      <div class="coin-box">
+        <div class="coin-icon">🪙 350</div>
+        <div>$3.70</div>
+      </div>
+      <div class="coin-box">
+        <div class="coin-icon">🪙 700</div>
+        <div>$7.40</div>
+      </div>
+      <div class="coin-box">
+        <div class="coin-icon">🪙 1,400</div>
+        <div>$14.80</div>
+      </div>
+      <div class="coin-box">
+        <div class="coin-icon">🪙 3,500</div>
+        <div>$37.00</div>
+      </div>
+      <div class="coin-box">
+        <div class="coin-icon">🪙 7,000</div>
+        <div>$74.00</div>
+      </div>
+      <div class="coin-box">
+        <div class="coin-icon">🪙 17,500</div>
+        <div>$185.00</div>
+      </div>
+      <div class="coin-box custom-trigger">
+  <div class="coin-icon">🪙 Custom</div>
+  <div style="font-size: 13px; color: #999;">Large amount supported</div>
+</div>
+<div id="customModal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Custom</h2>
+      <span class="close-btn">&times;</span>
+    </div>
+    <div class="modal-body">
+      <div class="custom-input-box">
+        <span class="coin-icon">🪙</span>
+        <input type="text" id="customAmountInput" readonly>
+      </div>
+      <div class="custom-keypad">
+  <button>1</button><button>2</button><button>3</button><button data-action="backspace">⌫</button>
+  <button>4</button><button>5</button><button>6</button><button>00</button>
+  <button>7</button><button>8</button><button>9</button><button>0</button>
+</div>
+      <div class="modal-total">Total: $<span id="customTotal">0.00</span></div>
+      <button class="recharge-btn">Recharge</button>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="payment-methods">
+      Payment method: <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" height="14"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" height="14"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Discover_Card_logo.svg/320px-Discover_Card_logo.svg.png" height="14"> ...
+    </div>
+    <div class="total">Total $<span id="totalAmount">0.00</span></div>
+
+    <button class="main-recharge-btn">Recharge</button>
+  </div>
+  <!-- Order Summary Modal -->
+<!-- Order Summary Modal -->
+  <div id="orderModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.4); z-index: 3000; align-items: center; justify-content: center;">
+
+    <div id="modalCard" style="background: #fff; border-radius: 12px; padding: 28px 32px; width: 500px; max-width: 95%; box-shadow: 0 8px 24px rgba(0,0,0,0.25); position: relative; font-family: sans-serif; transition: height 0.3s ease;">
+
+      <div id="orderSummaryWrapper">
+        <div style="font-weight: 600; font-size: 20px; padding-bottom: 12px; border-bottom: 3px solid #ccc; margin-bottom: 20px; position: relative;">
+          Order Summary
+          <span onclick="closeOrderModal()" style="position: absolute; right: 20px; top: 0; font-size: 20px; cursor: pointer;">✖</span>
+        </div>
+
+        <div id="orderSummaryContent">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+            <div>Account</div>
+            <div id="summaryAccount">username_here</div>
+          </div>
+         <!-- New compact layout for coin & total -->
+<div style="margin-bottom: 6px;">
+  <div style="display: flex; justify-content: space-between; font-size: 15px;">
+    <div id="summaryCoins">0 Coins</div>
+    <div id="summaryCoinsAmount">$0.00</div>
+  </div>
+  <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 16px;">
+    <div>Total</div>
+    <div id="summaryTotalAmount">$0.00</div>
+  </div>
+</div>
+
+          <div style="margin-bottom: 12px; font-weight: 600; font-size: 14px;">Select a payment Method</div>
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 20px;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" style="height: 18px; width: auto;">
+  <span style="font-weight: 600;">**** **** **** 12</span>
+</div>
+
+            <input type="radio" checked style="accent-color: #fe2c55;">
+          </div>
+        </div>
+      </div>
+
+
+<!-- Wrap only the bottom Pay Now part -->
+<div id="modalBottomWrapper">
+  <!-- 1. Original Pay Now Button -->
+  <div id="modalActions" style="text-align: center;">
+    <button id="payNowBtn" style="padding: 10px 20px; background: #fe2c55; border: none; color: #fff; font-weight: bold; border-radius: 6px;">Pay Now</button>
+  </div>
+
+  <!-- 2. Pink Loading Spinner -->
+  <div id="modalLoading" style="display: none; text-align: center; padding: 20px;">
+    <div class="spinner"></div>
+  </div>
+
+ <!-- 3. Confirmation -->
+<div id="modalConfirmation" style="display: none; text-align: center; ">
+  <div style="margin: 12px 0 12px;">
+  <img src="ticcck.png" alt="Success" style="width: 90px; height: 90px;" />
+</div>
+  <h2 style="margin: 0 0 12px; font-size: 20px; font-weight: 600;">Payment completed</h2>
+  <p style="font-size: 14px; color: #555; margin-bottom: 24px;">
+    You recharged <strong><span id="confirmCoins">700</span></strong> coins. You can use coins to send virtual gifts to creators.
+  </p>
+  <button onclick="window.location.reload()" style="background: #fe2c55; color: white; border: none; padding: 10px 24px; border-radius: 6px; font-weight: 600; font-size: 14px;">Go back</button>
+</div>
+
+
+
+<style>
+.spinner {
+  border: 6px solid #ffd1dc;
+  border-top: 6px solid #fe2c55;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
+<script>
+    document.getElementById("payNowBtn").addEventListener("click", function () {
+      document.getElementById("orderSummaryWrapper").style.display = "none";
+      document.getElementById("modalActions").style.display = "none";
+      document.getElementById("modalLoading").style.display = "block";
+
+      setTimeout(function () {
+        document.getElementById("modalLoading").style.display = "none";
+
+        let coins = 0;
+        const selected = document.querySelector('.coin-box.selected');
+        if (selected && !selected.classList.contains('custom-trigger')) {
+          const coinText = selected.querySelector('.coin-icon').textContent;
+          coins = parseInt(coinText.replace(/[^0-9]/g, '') || '0', 10);
+        } else {
+          const raw = document.getElementById('customAmountInput')?.value.replace(/[^0-9]/g, '') || '0';
+          coins = parseInt(raw || '0', 10);
+        }
+
+        document.getElementById("confirmCoins").textContent = coins;
+        document.getElementById("modalConfirmation").style.display = "flex";
+      }, 2000);
+    });
+
+    function closeOrderModal() {
+      document.getElementById("orderModal").style.display = "none";
+    }
+  </script>
+
+ <script>
+document.getElementById("payNowBtn").addEventListener("click", function () {
+  // Step 1: Hide Pay button
+  document.getElementById("modalActions").style.display = "none";
+
+  // Step 2: Show spinner
+  document.getElementById("modalLoading").style.display = "block";
+
+  // Step 3: After 2 seconds show confirmation
+  setTimeout(function () {
+    document.getElementById("modalLoading").style.display = "none";
+
+    // Get coin amount
+    let coins = 0;
+    const selected = document.querySelector('.coin-box.selected');
+    if (selected && !selected.classList.contains('custom-trigger')) {
+      const coinText = selected.querySelector('.coin-icon').textContent;
+      coins = parseInt(coinText.replace(/[^0-9]/g, '') || '0', 10);
+    } else {
+      const raw = document.getElementById('customAmountInput').value.replace(/[^0-9]/g, '');
+      coins = parseInt(raw || '0', 10);
+    }
+
+    // Update confirmation message
+    document.getElementById("confirmCoins").textContent = coins;
+    document.getElementById("modalCard").style.height = "320px"; // or try 300px if you want smaller
+
+    document.getElementById("modalConfirmation").style.display = "block";
+  }, 2000);
+});
+</script>
+
+  <script>
+    const coinRate = 0.0105714;
+    const coinBoxes = document.querySelectorAll('.coin-box');
+    const customBox = document.querySelector('.custom-trigger');
+    const customInput = document.getElementById('customAmountInput');
+    const customModal = document.getElementById('customModal');
+    const totalAmountText = document.getElementById('totalAmount');
+    const keypadButtons = document.querySelectorAll('.custom-keypad button');
+    const closeBtn = document.querySelector('.close-btn');
+
+    function formatWithCommas(num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function extractRawNumber(str) {
+      return str.replace(/[^0-9]/g, "");
+    }
+
+    function updateCustomInput(raw) {
+      const cleanNum = extractRawNumber(raw);
+      const number = parseInt(cleanNum || '0', 10);
+      customInput.value = formatWithCommas(number);
+      const total = (number * coinRate).toFixed(2);
+      totalAmountText.textContent = total;
+    }
+
+    keypadButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const action = btn.dataset.action;
+        let current = extractRawNumber(customInput.value);
+
+        if (action === "backspace" || btn.textContent === '⌫') {
+          current = current.slice(0, -1);
+        } else {
+          current += btn.textContent;
+        }
+
+        updateCustomInput(current);
+      });
+    });
+
+    coinBoxes.forEach(box => {
+      box.addEventListener('click', () => {
+        coinBoxes.forEach(b => b.classList.remove('selected'));
+        box.classList.add('selected');
+
+        if (box.classList.contains('custom-trigger')) {
+          customModal.style.display = 'flex';
+          updateCustomInput(customInput.value);
+        } else {
+          customModal.style.display = 'none';
+          customInput.value = '';
+          const coinText = box.querySelector('.coin-icon').textContent;
+          const onlyNumbers = coinText.match(/\d+/g)?.join('') || '0';
+          const coinAmount = parseInt(onlyNumbers, 10);
+          const total = (coinAmount * coinRate).toFixed(2);
+          totalAmountText.textContent = total;
+        }
+      });
+    });
+
+    if (closeBtn && customModal) {
+      closeBtn.addEventListener('click', () => {
+        customModal.style.display = 'none';
+        customInput.value = '';
+        totalAmountText.textContent = '0.00';
+        customBox.classList.remove('selected');
+      });
+    }
+
+    // Username suggestion logic
+    const input = document.getElementById('usernameInput');
+    const suggestionBox = document.getElementById('usernameSuggestions');
+
+    input.addEventListener('input', () => {
+      const value = input.value.trim();
+      suggestionBox.innerHTML = '';
+
+      if (!value) {
+        suggestionBox.style.display = 'none';
+        return;
+      }
+
+      const li = document.createElement('li');
+      li.style.padding = '8px 10px';
+      li.style.display = 'flex';
+      li.style.alignItems = 'center';
+      li.style.cursor = 'pointer';
+      li.innerHTML = `<img src="search-893.png" style="width: 16px; height: 16px; margin-right: 8px;"><span>${value}</span>`;
+
+      li.addEventListener('click', () => {
+        input.value = value;
+        suggestionBox.style.display = 'none';
+      });
+
+      suggestionBox.appendChild(li);
+      suggestionBox.style.display = 'block';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!input.contains(e.target) && !suggestionBox.contains(e.target)) {
+        suggestionBox.style.display = 'none';
+      }
+    });
+  </script>
+<script>
+function closeOrderModal() {
+  document.getElementById("orderModal").style.display = "none";
+}
+
+function showOrderModal(coins, amount) {
+  const username = document.getElementById('usernameInput').value || 'Unknown';
+
+  document.getElementById("summaryAccount").textContent = username;
+  document.getElementById("summaryCoins").textContent = `${coins} Coins`;
+  document.getElementById("summaryCoinsAmount").textContent = `$${amount}`;
+  document.getElementById("summaryTotalAmount").textContent = `Total $${amount}`;
+
+  const modal = document.getElementById("orderModal");
+  modal.style.display = "flex";
+}
+
+// 🔗 Connect to Recharge button
+document.querySelector('.main-recharge-btn').addEventListener('click', () => {
+  const selected = document.querySelector('.coin-box.selected');
+  let coins = 0;
+  let amount = '0.00';
+
+  if (selected && !selected.classList.contains('custom-trigger')) {
+    const coinText = selected.querySelector('.coin-icon').textContent;
+    coins = parseInt(coinText.match(/\\d+/g)?.join('') || '0', 10);
+    amount = (coins * 0.0105714).toFixed(2);
+  } else {
+    const raw = customAmountInput.value.replace(/[^0-9]/g, '');
+    coins = parseInt(raw || '0', 10);
+    amount = (coins * 0.0105714).toFixed(2);
+  }
+
+  showOrderModal(coins, amount);
+});
+</script>
+<script>
+function closeOrderModal() {
+  document.getElementById("orderModal").style.display = "none";
+}
+
+function showOrderModal(coins, amount) {
+  const usernameInput = document.getElementById('usernameInput');
+  const username = usernameInput ? usernameInput.value.trim() : 'Unknown';
+
+  document.getElementById("summaryAccount").textContent = username || 'Unknown';
+  document.getElementById("summaryCoins").textContent = `${coins} Coins`;
+  document.getElementById("summaryCoinsAmount").textContent = `$${amount}`;
+  document.getElementById("summaryTotalAmount").textContent = `Total $${amount}`;
+
+  document.getElementById("orderModal").style.display = "flex";
+}
+
+
+window.onload = () => {
+  const rechargeBtn = document.querySelector('.main-recharge-btn');
+  const coinBoxes = document.querySelectorAll('.coin-box');
+  const customAmountInput = document.getElementById('customAmountInput');
+
+  // Disable recharge button until selection
+  rechargeBtn.disabled = true;
+  rechargeBtn.style.opacity = 0.5;
+
+  // Enable button on coin selection
+  coinBoxes.forEach(box => {
+    box.addEventListener('click', () => {
+      rechargeBtn.disabled = false;
+      rechargeBtn.style.opacity = 1;
+    });
+  });
+
+  rechargeBtn.addEventListener('click', () => {
+    const selected = document.querySelector('.coin-box.selected');
+    let coins = 0;
+    let amount = '0.00';
+
+    if (!selected) {
+      alert("Please select a coin amount before recharging.");
+      return;
+    }
+
+    if (!selected.classList.contains('custom-trigger')) {
+      const coinText = selected.querySelector('.coin-icon').textContent;
+      coins = parseInt(coinText.replace(/[^0-9]/g, '') || '0', 10);
+    } else {
+      const raw = customAmountInput.value.replace(/[^0-9]/g, '');
+      coins = parseInt(raw || '0', 10);
+    }
+
+    amount = (coins * 0.0105714).toFixed(2);
+    showOrderModal(coins, amount);
+  });
+};
+
+</script>
+
+<script>
+document.querySelector('.recharge-btn').addEventListener('click', () => {
+  const raw = document.getElementById('customAmountInput').value.replace(/[^0-9]/g, '');
+  const coins = parseInt(raw || '0', 10);
+
+  if (coins === 0) {
+    alert("Please enter a coin amount.");
+    return;
+  }
+
+  const amount = (coins * 0.0105714).toFixed(2);
+
+  // Close custom modal and open order summary
+  document.getElementById('customModal').style.display = 'none';
+  showOrderModal(coins, amount);
+});
+</script>
+<script>
+  document.querySelectorAll('.coin-icon').forEach(el => {
+    el.innerHTML = el.innerHTML.replace('🪙', `<img src="cpoiin.png" alt="Coin" style="height: 18px; vertical-align: middle; margin-right: 4px;">`);
+  });
+</script>
+<script>
+  const coinHTML = `<img src="cpoiin.png" alt="Coin"
+                         style="height:13px; vertical-align:text-bottom; margin-right:4px;">`;
+
+  document.querySelectorAll('*').forEach(node => {
+    if (node.childNodes && node.childNodes.length) {
+      node.childNodes.forEach(child => {
+        if (child.nodeType === Node.TEXT_NODE && child.nodeValue.includes('🪙')) {
+          const parts = child.nodeValue.split('🪙');
+          const frag  = document.createDocumentFragment();
+
+          parts.forEach((part, idx) => {
+            if (idx > 0) {
+              const img = document.createRange().createContextualFragment(coinHTML);
+              frag.appendChild(img);
+            }
+            if (part) frag.appendChild(document.createTextNode(part));
+          });
+
+          node.replaceChild(frag, child);
+        }
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

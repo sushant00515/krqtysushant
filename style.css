@@ -1,0 +1,540 @@
+  * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #fff;
+      color: #000;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      border-bottom: 1px solid #e5e5e5;
+      height: 56px;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo img {
+      height: 24px;
+    }
+    .search-bar {
+      flex-grow: 1;
+      max-width: 300px;
+      margin: 0 16px;
+      position: relative;
+      justify-content: center;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: 8px 14px 8px 34px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+   .search-bar::before {
+      content: '';
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url('search-893.png');
+      background-size: 16px 16px;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 16px;
+      height: 16px;
+    }
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .icons div {
+      height: 32px;
+      width: 32px;
+      background: #f0f0f0;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .icons div svg {
+      width: 18px;
+      height: 18px;
+      fill: #000;
+    }
+    .icons div.avatar-img {
+      padding: 0;
+      overflow: hidden;
+      background: none;
+    }
+    .icons div.avatar-img img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    .avatar {
+  width: 56px;
+  height: 56px;
+  background: none;  /* ✅ remove red background */
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+    .container {
+      padding: 64px 40px 96px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+      .user-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .user-info .avatar {
+      flex-shrink: 0;
+    }
+    .user-info div:last-child {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .avatar {
+      width: 56px;
+      height: 56px;
+      background: none;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .recharge-line {
+      font-size: 14px;
+      margin-bottom: 32px;
+      color: #ff0050;
+      font-weight: 500;
+    }
+    .coin-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 70px;
+      row-gap: 48px;
+      margin-bottom: 48px;
+    }    .recharge-line {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+    .recharge-line .recharge-label {
+      color: #000;
+    }
+    .recharge-line .recharge-detail {
+      color: #ff0050;
+    }
+    .coin-box {
+      border: 2px solid #f0f0f0;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      background: #fff;
+      transition: all 0.2s ease-in-out;
+    }
+    .coin-box.selected {
+      border-color: #dfc21d;
+      background: #fff5f8;
+    }
+    .coin-box .coin-icon {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .coin-box div:last-child {
+      font-size: 14px;
+    }
+    .payment-methods {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+    .total {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .main-recharge-btn {
+  background-color: #ff0050;
+  color: white;
+  padding: 10px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: auto;
+  min-width: 140px;
+}
+
+.main-recharge-btn:hover {
+  background-color: #e00047;
+}
+
+    .history-link {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .history-link a,
+    .top-history-link {
+      text-decoration: none;
+      color: #000;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 30;
+      border: none;
+      display: inline-block;
+      transition: color 0.3s;
+
+    }
+    .history-link a:hover,
+    .top-history-link:hover {
+      color: #555;
+    }
+    .top-history-link-container {
+      position: absolute;
+      right: 200px;
+      top: 120px;
+    }
+    .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+ background: rgba(0, 0, 0, 0.5);  /* sometimes used to simulate blur */
+
+}
+
+.modal-content {
+    background: #e5e5e5;
+  width: 400px; /* increased from default (was likely around 300px) */
+  height: auto;
+  max-height: 90vh; /* so it fits smaller screens */
+  padding: 25px;
+  border-radius: 12px;
+}
+
+@keyframes fadeIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 24px;
+  color: #666;
+}
+
+.custom-input-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.custom-input-box input {
+  flex: 1;
+  width: 100%; /* ensures full stretch */
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 10px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.custom-keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.custom-keypad button {
+  padding: 16px 0;
+  background: #f1f1f1;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.custom-keypad button:hover {
+  background: #e0e0e0;
+}
+
+.modal-total {
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.recharge-btn {
+  background-color: #ff0050;
+  color: white;
+  padding: 16px 0;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.recharge-btn:hover {
+  background-color: #e00047;
+}
+
+
+
+@keyframes slideFadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0% { background: rgba(0,0,0,0); }
+  100% { background: rgba(0,0,0,0.4); }
+}
+
+.payNowbtn {
+
+    background: #fe2c55;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      width: 100%;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+}
+
+#payNowBtn {
+   background: #fe2c55;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      width: 100%;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+  }
+
+  #payNowBtn:hover {
+    background-color: #e02548;
+  }
+
+  .coin-img {
+  height: 1em;
+  width: 1em;
+  vertical-align: middle;  /* ← FIXED! */
+  margin-right: 4px;
+  object-fit: contain;
+  vertical-align: bottom;
+
+}
+
+.icons-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .icon-img {
+      height: 26px;
+      width: 26px;
+      cursor: pointer;
+      display: block;
+    }
+
+    .icon-upload {
+      height: 32px;
+      width: 32px;
+    }
+
+    @media (max-width: 768px) {
+  @media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .header-left {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 20px;
+  }
+
+  .search-bar {
+    flex: 1 1 20%;
+    order: 2;
+    margin-top: 2px;
+    max-width: 500%;
+    align-items: center;
+  }
+
+  .icons {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 10px;
+    align-items: right;
+  }
+
+  .icons img {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .icons img[alt="Upload"] {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .icons .avatar-img img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+   .username-input-container input,
+  #usernameSuggestions {
+    width: 40% !important;
+  }
+
+  .avatar-img img {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  .avatar-img {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+
+
+  .container {
+    padding: 32px 16px;
+  }
+
+  .coin-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 24px;
+  }
+
+  .top-history-link-container {
+    position: static;
+    text-align: right;
+    margin-bottom: 16px;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 16px;
+  }
+
+  .main-recharge-btn {
+    width: 30%;
+  }
+
+  .user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.user-info .avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 70%;
+  object-fit: cover;
+  border: none !important;
+    box-shadow: none !important;
+}
+
+.user-info > div {
+  display: flex;
+  flex-direction: column;
+}
+}
+
+
+  .coin-box {
+    padding: 16px;
+  }
+
+  .top-history-link {
+    display: inline-block;
+    margin-top: 20px;
+  }
+}

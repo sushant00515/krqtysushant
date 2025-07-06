@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    .card {
+      width: 400px;
+      margin: 80px auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: center;
+    }
+
+    #payNowBtn {
+      background-color: #fe2c55;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    #payNowBtn:hover {
+      background-color: #e02548;
+    }
+
+    #loading img {
+      width: 60px;
+    }
+
+    #confirmation {
+      font-size: 16px;
+    }
+
+    #confirmation h3 {
+      margin-top: 15px;
+      font-size: 20px;
+    }
+
+    #confirmation button {
+      margin-top: 20px;
+      background-color: #fe2c55;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #confirmation button:hover {
+      background-color: #e02548;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" id="order-summary">
+  <!-- Initial Content -->
+  <div id="original-content">
+    <h2>Order Summary</h2>
+    <p>700 Coins</p>
+    <button id="payNowBtn">Pay Now</button>
+  </div>
+
+  <!-- Loading animation -->
+  <div id="loading" style="display: none;">
+    <img src="https://i.gifer.com/ZZ5H.gif" alt="Loading...">
+  </div>
+
+  <!-- Payment confirmation -->
+  <div id="confirmation" style="display: none;">
+    <div style="font-size: 40px; color: green;">✔</div>
+    <h3>Payment completed</h3>
+    <p>You recharged 700 coins to your account. You can use coins to send virtual gifts to creators.</p>
+    <button onclick="window.location.reload()">Go back</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById("payNowBtn").addEventListener("click", function () {
+    // Hide initial content
+    document.getElementById("original-content").style.display = "none";
+
+    // Show loading
+    document.getElementById("loading").style.display = "block";
+
+    // After 2 seconds, show confirmation
+    setTimeout(function () {
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("confirmation").style.display = "block";
+    }, 2000);
+  });
+</script>
+
+</body>
+</html>
