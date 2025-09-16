@@ -1,0 +1,21 @@
+{
+  "name": "SushAnt Coins",
+  "short_name": "SushAnt Coins",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0070ba",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "unnamed.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "unnamed.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
